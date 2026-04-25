@@ -1,0 +1,2468 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bocasugart – Postres, Desayunos & Candy Bar en Chile</title>
+  <meta name="description" content="Postres irresistibles, desayunos personalizados y candy bar dulce y salado. Para regalar, compartir o revender. Alianzas comerciales disponibles en Chile." />
+  <meta name="keywords" content="pastelería Chile, postres personalizados, candy bar, desayunos regalo, repostería artesanal, reventa postres, cafetería proveedor" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Bocasugart – Postres y Dulces Artesanales" />
+  <meta property="og:description" content="Postres irresistibles para compartir, regalar o revender. Candy bar, desayunos y alianzas comerciales en Chile." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CL" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ============================================
+       VARIABLES & RESET
+    ============================================ */
+    :root {
+      --choco:       #5A2E2E;
+      --choco-light: #6B3E3E;
+      --choco-deep:  #3D1E1E;
+      --cream:       #F5F0EB;
+      --white:       #FFFFFF;
+      --rose:        #E8AFAF;
+      --rose-dark:   #D4888888;
+      --caramel:     #CFA18D;
+      --beige:       #D8B7A6;
+      --green:       #8FBF9F;
+      --text-dark:   #2C1810;
+      --text-mid:    #5C3D35;
+      --shadow-s:    0 2px 12px rgba(90,46,46,0.12);
+      --shadow-m:    0 6px 30px rgba(90,46,46,0.18);
+      --shadow-l:    0 16px 60px rgba(90,46,46,0.22);
+      --r:           14px;
+      --transition:  0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    h1,h2,h3,h4 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.2;
+    }
+
+    section { padding: 90px 0; }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ============================================
+       UTILITIES
+    ============================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+      letter-spacing: 0.02em;
+    }
+
+    .btn-primary {
+      background: var(--rose);
+      color: var(--choco-deep);
+    }
+    .btn-primary:hover {
+      background: #d99898;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(232,175,175,0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--cream);
+      border: 2px solid var(--cream);
+    }
+    .btn-outline:hover {
+      background: var(--cream);
+      color: var(--choco-deep);
+      transform: translateY(-2px);
+    }
+
+    .btn-choco {
+      background: var(--choco);
+      color: var(--cream);
+    }
+    .btn-choco:hover {
+      background: var(--choco-deep);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-m);
+    }
+
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--caramel);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      font-weight: 900;
+      color: var(--choco-deep);
+      margin-bottom: 18px;
+    }
+
+    .section-title span {
+      color: var(--choco-light);
+      font-style: italic;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      max-width: 560px;
+      line-height: 1.8;
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-36px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(36px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ============================================
+       NAVBAR
+    ============================================ */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 22px 0;
+      transition: var(--transition);
+    }
+
+    #navbar.scrolled {
+      background: var(--choco-deep);
+      padding: 14px 0;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.25);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 45px;
+      width: auto;
+      display: block;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    @media (max-width: 480px) {
+      .logo-footer-img {
+        height: 24px;
+      }
+    }
+
+    .logo-footer-img {
+      height: 48px;   /* más pequeño que el navbar */
+      width: auto;
+      display: block;
+    }
+
+    /* Tablet */
+    @media (max-width: 768px) {
+      .logo-img {
+        height: 38px;
+      }
+    }
+
+    /* Móvil */
+    @media (max-width: 480px) {
+      .logo-img {
+        height: 32px;
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      color: rgba(245,240,235,0.82);
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.25s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--rose);
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover {
+      color: var(--cream);
+    }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      padding: 10px 22px !important;
+      font-size: 0.85rem !important;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      width: 24px; height: 2px;
+      background: var(--cream);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* ============================================
+       HERO
+    ============================================ */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--choco-deep) 0%, var(--choco) 45%, #8B5046 100%);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 0 80px;
+    }
+
+    .hero-bg-decor {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .hero-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .hero-circle-1 { width: 600px; height: 600px; top: -200px; right: -150px; }
+    .hero-circle-2 { width: 350px; height: 350px; bottom: -100px; left: -80px; background: rgba(232,175,175,0.07); }
+    .hero-circle-3 { width: 180px; height: 180px; top: 35%; right: 18%; background: rgba(207,161,141,0.09); }
+
+    .hero-dots {
+      position: absolute;
+      top: 20%; left: 5%;
+      display: grid;
+      grid-template-columns: repeat(6,1fr);
+      gap: 16px;
+    }
+    .hero-dots span {
+      width: 4px; height: 4px;
+      background: rgba(232,175,175,0.35);
+      border-radius: 50%;
+      display: block;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(232,175,175,0.15);
+      border: 1px solid rgba(232,175,175,0.3);
+      color: var(--rose);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge::before {
+      content: '✦';
+      font-size: 0.7rem;
+    }
+
+    #hero h1 {
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      font-weight: 900;
+      color: var(--cream);
+      margin-bottom: 22px;
+      line-height: 1.08;
+    }
+
+    #hero h1 em {
+      color: var(--rose);
+      font-style: italic;
+    }
+
+    #hero p.hero-sub {
+      font-size: 1.15rem;
+      color: rgba(245,240,235,0.78);
+      margin-bottom: 44px;
+      max-width: 520px;
+      line-height: 1.8;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 64px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      text-align: left;
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--cream);
+      line-height: 1;
+    }
+
+    .hero-stat span {
+      font-size: 0.82rem;
+      color: rgba(245,240,235,0.6);
+      letter-spacing: 0.05em;
+    }
+
+    .hero-visual {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 46%;
+      max-width: 560px;
+      pointer-events: none;
+    }
+
+    .hero-cake-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      transform: rotate(-3deg);
+    }
+
+    .cake-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(232,175,175,0.2);
+      border-radius: 20px;
+      padding: 28px 20px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+    }
+
+    .cake-card:nth-child(2) { margin-top: 28px; }
+    .cake-card:nth-child(3) { margin-top: -14px; }
+
+    .cake-icon {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .cake-card p {
+      font-size: 0.82rem;
+      color: rgba(245,240,235,0.7);
+      font-weight: 500;
+    }
+
+    /* ============================================
+       SERVICES
+    ============================================ */
+    #servicios {
+      background: var(--white);
+      position: relative;
+    }
+
+    #servicios::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--rose), var(--caramel), var(--choco));
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .services-header .section-sub {
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--cream);
+      border-radius: var(--r);
+      padding: 36px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+      cursor: default;
+      border: 1px solid transparent;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--choco-light), var(--choco-deep));
+      opacity: 0;
+      transition: var(--transition);
+      border-radius: var(--r);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-l);
+      border-color: var(--rose);
+    }
+
+    .service-card:hover::before { opacity: 1; }
+
+    .service-card > * { position: relative; z-index: 1; }
+
+    .service-icon {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, var(--rose), var(--caramel));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon {
+      background: rgba(232,175,175,0.25);
+    }
+
+    .service-icon svg {
+      width: 26px; height: 26px;
+      fill: var(--choco-deep);
+      transition: fill var(--transition);
+    }
+
+    .service-card:hover .service-icon svg { fill: var(--rose); }
+
+    .service-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--choco-deep);
+      transition: color var(--transition);
+    }
+
+    .service-card:hover h3 { color: var(--cream); }
+
+    .service-card p {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      transition: color var(--transition);
+    }
+
+    .service-card:hover p { color: rgba(245,240,235,0.78); }
+
+    /* ============================================
+       BENEFITS
+    ============================================ */
+    #beneficios {
+      background: var(--cream);
+    }
+
+    .benefits-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .benefits-visual {
+      position: relative;
+    }
+
+    .benefits-blob {
+      width: 100%;
+      aspect-ratio: 1;
+      max-width: 460px;
+      background: linear-gradient(135deg, var(--choco-light), var(--choco-deep));
+      border-radius: 60% 40% 50% 60% / 50% 60% 40% 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 7rem;
+      animation: morphBlob 7s ease-in-out infinite;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes morphBlob {
+      0%,100% { border-radius: 60% 40% 50% 60% / 50% 60% 40% 50%; }
+      33%      { border-radius: 40% 60% 60% 40% / 60% 40% 50% 60%; }
+      66%      { border-radius: 50% 50% 40% 60% / 40% 60% 60% 40%; }
+    }
+
+    .benefits-blob-emoji {
+      font-size: 5rem;
+      z-index: 1;
+    }
+
+    .benefits-blob::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 40%, rgba(232,175,175,0.3), transparent 60%);
+    }
+
+    .benefits-float {
+      position: absolute;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 14px 20px;
+      box-shadow: var(--shadow-m);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--choco-deep);
+      white-space: nowrap;
+      animation: floatCard 4s ease-in-out infinite;
+    }
+
+    @keyframes floatCard {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
+    }
+
+    .benefits-float.f1 { top: 8%; right: -12%; animation-delay: 0s; }
+    .benefits-float.f2 { bottom: 14%; left: -10%; animation-delay: 2s; }
+    .benefits-float .f-icon { font-size: 1.4rem; }
+
+    .benefits-list {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .benefit-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 22px;
+      background: var(--white);
+      border-radius: var(--r);
+      border-left: 4px solid var(--rose);
+      transition: var(--transition);
+    }
+
+    .benefit-item:hover {
+      transform: translateX(6px);
+      box-shadow: var(--shadow-s);
+    }
+
+    .benefit-num {
+      width: 38px; height: 38px;
+      min-width: 38px;
+      background: linear-gradient(135deg, var(--rose), var(--caramel));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: var(--choco-deep);
+    }
+
+    .benefit-item h4 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--choco-deep);
+      margin-bottom: 4px;
+    }
+
+    .benefit-item p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       ABOUT
+    ============================================ */
+    #nosotros {
+      background: var(--choco-deep);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #nosotros::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: rgba(232,175,175,0.07);
+    }
+
+    #nosotros::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: rgba(207,161,141,0.06);
+    }
+
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    #nosotros .section-title { color: var(--cream); }
+    #nosotros .section-sub { color: rgba(245,240,235,0.72); }
+    #nosotros .section-label { color: var(--rose); }
+
+    .about-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .value-pill {
+      background: rgba(232,175,175,0.12);
+      border: 1px solid rgba(232,175,175,0.2);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .value-pill:hover {
+      background: rgba(232,175,175,0.2);
+      transform: translateY(-3px);
+    }
+
+    .value-pill .v-icon { font-size: 1.8rem; margin-bottom: 6px; }
+
+    .value-pill p {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--cream);
+    }
+
+    .about-visual-right {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .about-big-card {
+      background: rgba(232,175,175,0.1);
+      border: 1px solid rgba(232,175,175,0.18);
+      border-radius: 20px;
+      padding: 36px 32px;
+      backdrop-filter: blur(10px);
+    }
+
+    .about-big-card .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 6rem;
+      color: var(--rose);
+      line-height: 0.5;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .about-big-card p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.6;
+    }
+
+    .about-mini-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .about-mini-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(232,175,175,0.15);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .about-mini-card strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--rose);
+    }
+
+    .about-mini-card span {
+      font-size: 0.78rem;
+      color: rgba(245,240,235,0.6);
+    }
+
+    /* ============================================
+       PROCESO
+    ============================================ */
+    #proceso {
+      background: var(--white);
+    }
+
+    .proceso-header {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .proceso-header .section-sub { margin: 0 auto; }
+
+    .proceso-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .proceso-steps::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 12%;
+      right: 12%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--rose), var(--caramel), var(--rose), var(--caramel));
+      z-index: 0;
+    }
+
+    .proceso-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-num {
+      width: 80px; height: 80px;
+      background: linear-gradient(135deg, var(--choco-light), var(--choco-deep));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--cream);
+      margin-bottom: 24px;
+      position: relative;
+      box-shadow: var(--shadow-m);
+      transition: var(--transition);
+    }
+
+    .step-num::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 2px solid var(--rose);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .proceso-step:hover .step-num {
+      transform: scale(1.1);
+    }
+    .proceso-step:hover .step-num::after { opacity: 1; }
+
+    .proceso-step h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--choco-deep);
+      margin-bottom: 8px;
+    }
+
+    .proceso-step p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       TESTIMONIOS
+    ============================================ */
+    #testimonios {
+      background: var(--cream);
+    }
+
+    .testimonios-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .testimonios-header .section-sub { margin: 0 auto; }
+
+    .slider-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+
+    .testimonial-card {
+      min-width: 100%;
+      padding: 48px 56px;
+      background: var(--white);
+      border-radius: 24px;
+      box-shadow: var(--shadow-m);
+      text-align: center;
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      font-family: 'Playfair Display', serif;
+      font-size: 8rem;
+      color: var(--rose);
+      opacity: 0.3;
+      position: absolute;
+      top: 10px; left: 30px;
+      line-height: 1;
+    }
+
+    .testimonial-stars {
+      color: #F5A623;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      letter-spacing: 3px;
+    }
+
+    .testimonial-card blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--text-dark);
+      max-width: 700px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .author-avatar {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--choco-light), var(--rose));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: var(--cream);
+    }
+
+    .author-info strong {
+      display: block;
+      font-weight: 700;
+      color: var(--choco-deep);
+    }
+
+    .author-info span {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+    }
+
+    .slider-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    .slider-btn {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--choco-light);
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      color: var(--choco-deep);
+      font-size: 1.1rem;
+    }
+
+    .slider-btn:hover {
+      background: var(--choco);
+      border-color: var(--choco);
+      color: var(--cream);
+    }
+
+    .slider-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .slider-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--beige);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .slider-dot.active {
+      background: var(--choco);
+      transform: scale(1.4);
+    }
+
+    /* ============================================
+       BLOG
+    ============================================ */
+    #blog {
+      background: var(--white);
+    }
+
+    .blog-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .blog-header .section-sub { margin: 0 auto; }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .blog-card {
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--cream);
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-l);
+      border-color: var(--rose);
+    }
+
+    .blog-thumb {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blog-card:nth-child(1) .blog-thumb { background: linear-gradient(135deg, var(--choco-light), #8B5046); }
+    .blog-card:nth-child(2) .blog-thumb { background: linear-gradient(135deg, var(--caramel), var(--beige)); }
+    .blog-card:nth-child(3) .blog-thumb { background: linear-gradient(135deg, #8B9B7A, var(--green)); }
+
+    .blog-tag {
+      position: absolute;
+      top: 14px; left: 14px;
+      background: rgba(255,255,255,0.9);
+      color: var(--choco-deep);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 50px;
+    }
+
+    .blog-body {
+      padding: 24px 26px 28px;
+    }
+
+    .blog-meta {
+      font-size: 0.78rem;
+      color: var(--text-mid);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .blog-meta::before {
+      content: '●';
+      color: var(--rose);
+      font-size: 0.6rem;
+    }
+
+    .blog-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--choco-deep);
+      margin-bottom: 10px;
+      line-height: 1.4;
+      transition: color var(--transition);
+    }
+
+    .blog-card:hover h3 { color: var(--choco-light); }
+
+    .blog-card p {
+      font-size: 0.87rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+
+    .blog-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--choco-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap var(--transition);
+    }
+
+    .blog-link:hover { gap: 10px; }
+
+    /* ============================================
+       FAQ
+    ============================================ */
+    #faq {
+      background: var(--cream);
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .faq-header .section-sub { margin: 0 auto; }
+
+    .faq-list {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--r);
+      border: 1px solid transparent;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-item.open { border-color: var(--rose); }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 26px;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--choco-deep);
+      font-size: 0.98rem;
+      gap: 12px;
+      user-select: none;
+    }
+
+    .faq-icon {
+      width: 30px; height: 30px;
+      min-width: 30px;
+      border-radius: 50%;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      font-size: 1.2rem;
+      color: var(--choco-light);
+    }
+
+    .faq-item.open .faq-icon {
+      background: var(--rose);
+      color: var(--choco-deep);
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.35s ease;
+      padding: 0 26px;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 0 26px 22px;
+    }
+
+    .faq-answer p {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+
+    /* ============================================
+       CONTACT
+    ============================================ */
+    #contacto {
+      background: var(--choco-deep);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #contacto::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 450px; height: 450px;
+      border-radius: 50%;
+      background: rgba(232,175,175,0.06);
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    #contacto .section-title { color: var(--cream); }
+    #contacto .section-sub { color: rgba(245,240,235,0.7); }
+    #contacto .section-label { color: var(--rose); }
+
+    .contact-info {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(245,240,235,0.8);
+      font-size: 0.92rem;
+    }
+
+    .contact-info-item .ci-icon {
+      width: 40px; height: 40px;
+      background: rgba(232,175,175,0.12);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-form {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(232,175,175,0.15);
+      border-radius: 24px;
+      padding: 44px 40px;
+      backdrop-filter: blur(10px);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(245,240,235,0.7);
+      letter-spacing: 0.04em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(232,175,175,0.2);
+      border-radius: 10px;
+      padding: 13px 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--cream);
+      outline: none;
+      transition: border-color 0.3s;
+      width: 100%;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(245,240,235,0.35);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--rose);
+      background: rgba(255,255,255,0.12);
+    }
+
+    .form-group input.error,
+    .form-group select.error,
+    .form-group textarea.error {
+      border-color: #E57373;
+    }
+
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    .form-group select option { background: var(--choco-deep); color: var(--cream); }
+
+    .form-error-msg {
+      font-size: 0.78rem;
+      color: #F48FB1;
+      margin-top: 2px;
+    }
+
+    .form-submit-msg {
+      display: none;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .form-submit-msg.show { display: block; }
+    .form-submit-msg.success p { color: var(--green); font-weight: 600; }
+    .form-submit-msg.error p { color: #F48FB1; font-weight: 600; }
+
+    /* ============================================
+       CTA FINAL
+    ============================================ */
+    #cta-final {
+      background: linear-gradient(135deg, var(--rose) 0%, var(--caramel) 60%, var(--beige) 100%);
+      text-align: center;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #cta-final::before {
+      content: '🎂';
+      position: absolute;
+      font-size: 16rem;
+      opacity: 0.06;
+      top: -40px;
+      left: -40px;
+    }
+
+    #cta-final::after {
+      content: '🍰';
+      position: absolute;
+      font-size: 14rem;
+      opacity: 0.06;
+      bottom: -30px;
+      right: -20px;
+    }
+
+    #cta-final h2 {
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      color: var(--choco-deep);
+      margin-bottom: 18px;
+    }
+
+    #cta-final p {
+      font-size: 1.1rem;
+      color: var(--text-mid);
+      max-width: 560px;
+      margin: 0 auto 44px;
+    }
+
+    .cta-final-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    footer {
+      background: var(--choco-deep);
+      padding: 70px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 60px;
+    }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      color: rgba(245,240,235,0.6);
+      line-height: 1.8;
+      margin: 16px 0 28px;
+      max-width: 280px;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 10px;
+    }
+
+    .footer-social-btn {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: rgba(232,175,175,0.1);
+      border: 1px solid rgba(232,175,175,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: rgba(245,240,235,0.7);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .footer-social-btn:hover {
+      background: var(--rose);
+      color: var(--choco-deep);
+      border-color: var(--rose);
+    }
+
+    footer h5 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 20px;
+    }
+
+    footer ul li {
+      margin-bottom: 10px;
+    }
+
+    footer ul li a {
+      font-size: 0.88rem;
+      color: rgba(245,240,235,0.6);
+      transition: color 0.25s;
+    }
+
+    footer ul li a:hover { color: var(--cream); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(232,175,175,0.12);
+      padding: 22px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-bottom p {
+      font-size: 0.82rem;
+      color: rgba(245,240,235,0.45);
+    }
+
+    /* ============================================
+       WHATSAPP FLOAT
+    ============================================ */
+    .wa-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      animation: waFloat 2.5s ease-in-out infinite;
+    }
+
+    @keyframes waFloat {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-7px); }
+    }
+
+    .wa-btn {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .wa-btn:hover { transform: scale(1.1) !important; animation: none; }
+
+    .wa-btn svg {
+      width: 32px; height: 32px;
+      fill: white;
+    }
+
+    .wa-pulse {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: #25D366;
+      opacity: 0.4;
+      animation: waPulse 2s ease-out infinite;
+    }
+
+    @keyframes waPulse {
+      0%   { transform: scale(1); opacity: 0.4; }
+      100% { transform: scale(1.8); opacity: 0; }
+    }
+
+    /* ============================================
+       MOBILE NAV MENU
+    ============================================ */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      inset: 0;
+      background: var(--choco-deep);
+      z-index: 998;
+      padding: 120px 40px 40px;
+      gap: 28px;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--cream);
+      transition: color 0.25s;
+    }
+
+    .mobile-menu a:hover { color: var(--rose); }
+
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (max-width: 1024px) {
+      .benefits-wrap { grid-template-columns: 1fr; gap: 50px; }
+      .about-wrap { grid-template-columns: 1fr; gap: 50px; }
+      .contact-wrap { grid-template-columns: 1fr; gap: 50px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .proceso-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .proceso-steps::before { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 70px 0; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero-visual { display: none; }
+      #hero { text-align: center; }
+      .hero-btns { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .services-grid { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .about-values { grid-template-columns: 1fr 1fr; }
+      .about-mini-cards { grid-template-columns: 1fr 1fr; }
+      .testimonial-card { padding: 36px 28px; }
+    }
+
+    @media (max-width: 480px) {
+      .proceso-steps { grid-template-columns: 1fr; }
+      .contact-form { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       NAVBAR
+  ============================================ -->
+  <nav id="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="container nav-inner">
+
+      <a href="#" class="nav-logo" aria-label="Bocasugart inicio">
+        <img src="img/logo_transp_hor.png" alt="Bocasugart logo" class="logo-img">
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contacto" class="btn btn-primary nav-cta">Contáctanos</a></li>
+      </ul>
+      <div class="hamburger" id="hamburgerBtn" aria-label="Menú" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <nav class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Menú móvil">
+    <a href="#servicios" class="mobile-link">Servicios</a>
+    <a href="#beneficios" class="mobile-link">Beneficios</a>
+    <a href="#nosotros" class="mobile-link">Nosotros</a>
+    <a href="#blog" class="mobile-link">Blog</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
+    <a href="#contacto" class="mobile-link">Contacto</a>
+  </nav>
+
+  <!-- ============================================
+       HERO
+  ============================================ -->
+  <section id="hero" aria-label="Presentación principal">
+    <div class="hero-bg-decor" aria-hidden="true">
+      <div class="hero-circle hero-circle-1"></div>
+      <div class="hero-circle hero-circle-2"></div>
+      <div class="hero-circle hero-circle-3"></div>
+      <div class="hero-dots">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">Pastelería Artesanal · Chile</div>
+        <h1>Postres que <em>enamoran</em>,<br>momentos que quedan</h1>
+        <p class="hero-sub">
+          Elaboramos postres irresistibles para regalar, compartir o revender. Desde desayunos personalizados hasta candy bar para eventos — calidad artesanal con presentación de nivel gourmet.
+        </p>
+        <div class="hero-btns">
+          <a href="#servicios" class="btn btn-primary">Ver nuestros productos ✦</a>
+          <a href="#contacto" class="btn btn-outline">Hacer un pedido</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>500+</strong>
+            <span>Pedidos entregados</span>
+          </div>
+          <div class="hero-stat">
+            <strong>100%</strong>
+            <span>Artesanal</span>
+          </div>
+          <div class="hero-stat">
+            <strong>50+</strong>
+            <span>Aliados comerciales</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-cake-grid">
+        <div class="cake-card">
+          <span class="cake-icon">🎂</span>
+          <p>Tortas personalizadas</p>
+        </div>
+        <div class="cake-card">
+          <span class="cake-icon">🍭</span>
+          <p>Candy Bar</p>
+        </div>
+        <div class="cake-card">
+          <span class="cake-icon">☕</span>
+          <p>Box Desayunos</p>
+        </div>
+        <div class="cake-card">
+          <span class="cake-icon">🍰</span>
+          <p>Postres al detal</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SERVICIOS
+  ============================================ -->
+  <section id="servicios" aria-labelledby="servicios-title">
+    <div class="container">
+      <div class="services-header reveal">
+        <span class="section-label">Lo que hacemos</span>
+        <h2 class="section-title" id="servicios-title">Todo el dulce que <span>necesitas</span></h2>
+        <p class="section-sub">Productos pensados para cada ocasión, con la calidad y presentación que mereces.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a5 5 0 00-5 5c0 1.83.98 3.43 2.44 4.32C6.24 12.7 4 15.61 4 19h16c0-3.39-2.24-6.3-5.44-7.68A5 5 0 0012 2zm0 2a3 3 0 110 6 3 3 0 010-6zm0 8c3.31 0 6 2.69 6 6H6c0-3.31 2.69-6 6-6z"/></svg>
+          </div>
+          <h3>Venta al Detal</h3>
+          <p>Porciones individuales y para compartir. Postres frescos listos para llevar o pedir a domicilio. Perfectos para el antojo diario o una celebración especial.</p>
+        </div>
+
+        <div class="service-card reveal" style="transition-delay:0.1s">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 3h18v2H3V3zm2 4h14l-1.5 9h-11L5 7zm3.5 2l.75 5h5.5l.75-5h-7zm1.5 2h4l-.5 3h-3l-.5-3z"/></svg>
+          </div>
+          <h3>Venta al Por Mayor</h3>
+          <p>Productos listos para revender. Precios preferenciales para cafeterías, minimarkets y emprendedores que quieren ofrecer postres de calidad sin producirlos.</p>
+        </div>
+
+        <div class="service-card reveal" style="transition-delay:0.2s">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L2 8l10 5 10-5-10-5zm0 9.5L2 8l-.01 9L12 22l10.01-5L22 8l-10 4.5z"/></svg>
+          </div>
+          <h3>Candy Bar para Eventos</h3>
+          <p>Mesas dulces y saladas completamente personalizadas para matrimonios, cumpleaños, baby showers y todo tipo de eventos. Un rincón irresistible para tus invitados.</p>
+        </div>
+
+        <div class="service-card reveal" style="transition-delay:0.3s">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 3H4v2h16V3zm0 4H4v2h16V7zm-8 4H4v2h8v-2zm8 0h-6v2h6v-2zM4 15h8v2H4v-2zm10 0h6v2h-6v-2zm-10 4h4v2H4v-2zm6 0h10v2H10v-2z"/></svg>
+          </div>
+          <h3>Box de Desayunos</h3>
+          <p>Detalles únicos y personalizados para regalar. Desayunos completos, cajas sorpresa y regalos especiales para enamorar a quien más quieres.</p>
+        </div>
+
+        <div class="service-card reveal" style="transition-delay:0.4s">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          </div>
+          <h3>Alianzas Comerciales</h3>
+          <p>Programa de socios para cafeterías, minimarkets y emprendedores. Genera ingresos revendiendo nuestros productos con respaldo de marca y calidad garantizada.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       BENEFICIOS
+  ============================================ -->
+  <section id="beneficios" aria-labelledby="beneficios-title">
+    <div class="container">
+      <div class="benefits-wrap">
+        <div class="benefits-visual reveal-left">
+          <div class="benefits-blob">
+            <span class="benefits-blob-emoji">🍰</span>
+          </div>
+          <div class="benefits-float f1">
+            <span class="f-icon">⭐</span>
+            <span>+4.9 estrellas promedio</span>
+          </div>
+          <div class="benefits-float f2">
+            <span class="f-icon">🚀</span>
+            <span>Entrega express disponible</span>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <span class="section-label">¿Por qué elegirnos?</span>
+          <h2 class="section-title" id="beneficios-title">Dulces razones para <span>confiar en nosotros</span></h2>
+          <p class="section-sub">Más que postres, te entregamos una experiencia que conecta emocionalmente con quienes más quieres.</p>
+          <div class="benefits-list">
+            <div class="benefit-item">
+              <div class="benefit-num">01</div>
+              <div>
+                <h4>Calidad artesanal garantizada</h4>
+                <p>Cada producto se elabora con ingredientes seleccionados, sin atajos ni conservantes artificiales. Sabor real, presentación impecable.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-num">02</div>
+              <div>
+                <h4>Personalización total</h4>
+                <p>Adaptamos cada detalle a tu ocasión, gustos y presupuesto. Desde el sabor hasta el packaging y la dedicatoria.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-num">03</div>
+              <div>
+                <h4>Socio ideal para tu negocio</h4>
+                <p>Si tienes una cafetería o quieres emprender, somos el proveedor de postres que necesitas. Precios, calidad y soporte garantizados.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-num">04</div>
+              <div>
+                <h4>Confianza y puntualidad</h4>
+                <p>Nos comprometemos con tus fechas. Cumplimos con cada pedido a tiempo, porque sabemos que cada ocasión importa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       NOSOTROS
+  ============================================ -->
+  <section id="nosotros" aria-labelledby="nosotros-title">
+    <div class="container">
+      <div class="about-wrap">
+        <div class="reveal-left">
+          <span class="section-label">Nuestra historia</span>
+          <h2 class="section-title" id="nosotros-title">Nacimos de la <span>pasión</span> por lo dulce</h2>
+          <p class="section-sub">Bocasugart es una marca chilena que nació con un propósito claro: llevar postres de verdad a cada mesa, cada reunión y cada momento especial.</p>
+          <div class="about-values">
+            <div class="value-pill">
+              <div class="v-icon">💛</div>
+              <p>Pasión</p>
+            </div>
+            <div class="value-pill">
+              <div class="v-icon">🌿</div>
+              <p>Ingredientes naturales</p>
+            </div>
+            <div class="value-pill">
+              <div class="v-icon">🎨</div>
+              <p>Creatividad</p>
+            </div>
+            <div class="value-pill">
+              <div class="v-icon">🤝</div>
+              <p>Confianza</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual-right reveal-right">
+          <div class="about-big-card">
+            <span class="quote-mark">"</span>
+            <p>Cada postre que creamos es una forma de decirle a alguien que es especial. Ponemos el alma en cada preparación, porque sabemos que detrás de cada pedido hay una historia que merece ser dulce.</p>
+          </div>
+          <div class="about-mini-cards">
+            <div class="about-mini-card">
+              <strong>3+</strong>
+              <span>Años de experiencia</span>
+            </div>
+            <div class="about-mini-card">
+              <strong>100%</strong>
+              <span>Hecho en Chile</span>
+            </div>
+            <div class="about-mini-card">
+              <strong>30+</strong>
+              <span>Variedades de postres</span>
+            </div>
+            <div class="about-mini-card">
+              <strong>24h</strong>
+              <span>Tiempo de respuesta</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PROCESO
+  ============================================ -->
+  <section id="proceso" aria-labelledby="proceso-title">
+    <div class="container">
+      <div class="proceso-header reveal">
+        <span class="section-label">Cómo funciona</span>
+        <h2 class="section-title" id="proceso-title">Tu pedido, <span>paso a paso</span></h2>
+        <p class="section-sub">Un proceso simple, claro y pensado para que tengas la mejor experiencia desde el primer contacto.</p>
+      </div>
+      <div class="proceso-steps">
+        <div class="proceso-step reveal">
+          <div class="step-num">1</div>
+          <h4>Contáctanos</h4>
+          <p>Escríbenos por WhatsApp o el formulario y cuéntanos qué necesitas. Te respondemos en máximo 24 horas.</p>
+        </div>
+        <div class="proceso-step reveal" style="transition-delay:0.15s">
+          <div class="step-num">2</div>
+          <h4>Cotizamos juntos</h4>
+          <p>Te enviamos una propuesta personalizada con opciones, precios y tiempos de entrega ajustados a tu pedido.</p>
+        </div>
+        <div class="proceso-step reveal" style="transition-delay:0.3s">
+          <div class="step-num">3</div>
+          <h4>Preparamos con amor</h4>
+          <p>Elaboramos tu pedido con los mejores ingredientes. Cada detalle cuidado para que el resultado sea perfecto.</p>
+        </div>
+        <div class="proceso-step reveal" style="transition-delay:0.45s">
+          <div class="step-num">4</div>
+          <h4>Entregamos a tiempo</h4>
+          <p>Coordinamos la entrega o retiro en el lugar y fecha acordada. Garantizamos puntualidad en cada pedido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TESTIMONIOS
+  ============================================ -->
+  <section id="testimonios" aria-labelledby="testimonios-title">
+    <div class="container">
+      <div class="testimonios-header reveal">
+        <span class="section-label">Lo que dicen</span>
+        <h2 class="section-title" id="testimonios-title">Clientes que <span>volvieron felices</span></h2>
+        <p class="section-sub">La mejor referencia siempre será la experiencia de quienes ya confiaron en nosotros.</p>
+      </div>
+      <div class="slider-wrapper reveal">
+        <div class="slider-track" id="sliderTrack">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>Pedí un box de desayuno sorpresa para el cumpleaños de mi mamá y quedé absolutamente enamorada. La presentación era digna de foto, y el sabor… increíble. Bocasugart definitivamente se convirtió en mi lugar de confianza para los regalos especiales.</blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">CV</div>
+              <div class="author-info">
+                <strong>Catalina Vergara</strong>
+                <span>Santiago, RM</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>Soy dueña de una cafetería en Providencia y desde que empecé a trabajar con Bocasugart mis ventas de postres aumentaron considerablemente. Mis clientes siempre preguntan por las tortas. La calidad es constante y la entrega siempre puntual.</blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">AP</div>
+              <div class="author-info">
+                <strong>Andrea Pizarro</strong>
+                <span>Dueña de Café Ámbar, Providencia</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>Contratamos el candy bar para el matrimonio de mi hermana y fue el centro de atención de la fiesta. Todo coordinado, hermoso y delicioso. Los invitados no podían creer que era tan perfectamente presentado. Totalmente recomendable.</blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">MR</div>
+              <div class="author-info">
+                <strong>Matías Rojas</strong>
+                <span>Las Condes, Santiago</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>Empecé a revender los productos de Bocasugart en mi minimarket y la verdad superó todas mis expectativas. Los clientes repiten, el producto llega en perfectas condiciones y el margen es muy bueno. Excelente alianza comercial.</blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">FS</div>
+              <div class="author-info">
+                <strong>Felipe Soto</strong>
+                <span>Emprendedor, Puente Alto</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn" id="sliderPrev" aria-label="Testimonio anterior">&#8592;</button>
+          <div class="slider-dots" id="sliderDots"></div>
+          <button class="slider-btn" id="sliderNext" aria-label="Testimonio siguiente">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       BLOG
+  ============================================ -->
+  <section id="blog" aria-labelledby="blog-title">
+    <div class="container">
+      <div class="blog-header reveal">
+        <span class="section-label">Contenido de valor</span>
+        <h2 class="section-title" id="blog-title">Aprende, crece y <span>endulza tu negocio</span></h2>
+        <p class="section-sub">Recursos gratuitos para emprendedores y clientes que quieren saber más sobre el mundo dulce y el negocio de la repostería.</p>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card reveal">
+          <div class="blog-thumb">
+            <div class="blog-tag">Emprendimiento</div>
+            🛒
+          </div>
+          <div class="blog-body">
+            <p class="blog-meta">15 Abril 2026 · 5 min lectura</p>
+            <h3>Cómo monetizar tu minimarket revendiendo postres artesanales en 2026</h3>
+            <p>Descubre cómo negocios locales en Chile están generando ingresos adicionales con poco espacio y sin invertir en producción propia. Una guía práctica para empezar hoy.</p>
+            <a href="#" class="blog-link">Leer artículo →</a>
+          </div>
+        </article>
+        <article class="blog-card reveal" style="transition-delay:0.15s">
+          <div class="blog-thumb">
+            <div class="blog-tag">Financiamiento</div>
+            💰
+          </div>
+          <div class="blog-body">
+            <p class="blog-meta">02 Abril 2026 · 7 min lectura</p>
+            <h3>Fondos CORFO y FOSIS 2026: guía completa para postular si tienes una pastelería</h3>
+            <p>Los emprendedores del rubro alimentario tienen acceso a capital semilla y créditos blandos. Te explicamos qué programas existen, cómo postular y qué errores evitar.</p>
+            <a href="#" class="blog-link">Leer artículo →</a>
+          </div>
+        </article>
+        <article class="blog-card reveal" style="transition-delay:0.3s">
+          <div class="blog-thumb">
+            <div class="blog-tag">Marketing Digital</div>
+            📱
+          </div>
+          <div class="blog-body">
+            <p class="blog-meta">20 Marzo 2026 · 6 min lectura</p>
+            <h3>Instagram y WhatsApp Business: las herramientas clave para vender más postres en 2026</h3>
+            <p>El marketing digital ya no es opcional para las pastelerías. Aprende estrategias concretas de contenido, historias y automatización para atraer más clientes sin gastar en publicidad paga.</p>
+            <a href="#" class="blog-link">Leer artículo →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FAQ
+  ============================================ -->
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="faq-header reveal">
+        <span class="section-label">Preguntas frecuentes</span>
+        <h2 class="section-title" id="faq-title">Resolvemos tus <span>dudas</span></h2>
+        <p class="section-sub">Todo lo que necesitas saber antes de hacer tu primer pedido con nosotros.</p>
+      </div>
+      <div class="faq-list reveal" id="faqList">
+
+        <div class="faq-item">
+          <div class="faq-question">
+            ¿Con cuánta anticipación debo hacer mi pedido?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Para pedidos al detal recomendamos al menos 48 horas de anticipación. Para candy bar de eventos, box de desayunos personalizados o pedidos al por mayor, lo ideal es contactarnos con mínimo 5 a 7 días de anticipación para garantizar disponibilidad y tiempo de preparación óptimo.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            ¿Hacen despacho a domicilio?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Sí, coordinamos entregas en Santiago y comunas aledañas. El costo de despacho varía según la ubicación y el tamaño del pedido. En algunos casos, para pedidos de mayor volumen, el despacho es sin costo. Contáctanos para consultar disponibilidad en tu zona.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            ¿Cómo funciona el programa de alianzas para reventa?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>El programa está diseñado para cafeterías, minimarkets y emprendedores que quieren ofrecer postres de calidad sin producirlos. Ofrecemos precios preferenciales por volumen, embalaje listo para reventa y soporte constante. Si tienes un negocio o quieres iniciar uno, escríbenos y te explicamos todos los detalles.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            ¿Pueden hacerse postres sin gluten o con restricciones alimentarias?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Tenemos opciones para personas con ciertas restricciones alimentarias. Contáctanos directamente indicando la restricción específica (sin gluten, sin lactosa, vegano, etc.) y evaluamos la posibilidad según la disponibilidad de ingredientes y el tipo de producto solicitado.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            ¿Qué métodos de pago aceptan?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Aceptamos transferencia bancaria, pago por Mercado Pago y efectivo en coordinaciones presenciales. Para pedidos de alianzas comerciales, manejamos condiciones de pago acordadas según volumen. Generalmente solicitamos un anticipo del 50% para confirmar el pedido.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            ¿El candy bar incluye decoración y montaje?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Sí. Nuestro servicio de candy bar incluye la planificación del menú dulce y salado, decoración temática de la mesa, vajilla y presentación completa, y el montaje en el lugar del evento. El desmontaje también puede coordinarse. Todo personalizado según la temática de tu celebración.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CONTACTO
+  ============================================ -->
+  <section id="contacto" aria-labelledby="contacto-title">
+    <div class="container">
+      <div class="contact-wrap">
+        <div class="reveal-left">
+          <span class="section-label">Hablemos</span>
+          <h2 class="section-title" id="contacto-title">¿Listo para tu próximo <span>momento dulce?</span></h2>
+          <p class="section-sub">Escríbenos y cuéntanos qué necesitas. Nos encanta ayudarte a crear experiencias memorables.</p>
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <div class="ci-icon">📱</div>
+              <span>+56 9 7523 3425</span>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">📍</div>
+              <span>Santiago, Región Metropolitana, Chile</span>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">🕐</div>
+              <span>Lunes a sábado, 9:00 – 19:00 hrs</span>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">💬</div>
+              <span>Respuesta en menos de 24 horas</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form reveal-right">
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" />
+                <span class="form-error-msg" id="nombreError"></span>
+              </div>
+              <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+56 9 XXXX XXXX" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico *</label>
+              <input type="email" id="email" name="email" placeholder="tu@correo.com" />
+              <span class="form-error-msg" id="emailError"></span>
+            </div>
+            <div class="form-group">
+              <label for="servicio">Servicio de interés *</label>
+              <select id="servicio" name="servicio">
+                <option value="">Selecciona una opción</option>
+                <option value="detal">Venta al detal</option>
+                <option value="mayor">Venta al por mayor / Reventa</option>
+                <option value="candy">Candy Bar para eventos</option>
+                <option value="desayuno">Box de desayuno / Regalo</option>
+                <option value="alianza">Alianza comercial</option>
+                <option value="otro">Otro</option>
+              </select>
+              <span class="form-error-msg" id="servicioError"></span>
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Mensaje *</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué necesitas..."></textarea>
+              <span class="form-error-msg" id="mensajeError"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; font-size:1rem; padding:16px;">
+              Enviar mensaje ✦
+            </button>
+          </form>
+          <div class="form-submit-msg" id="formMsg">
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CTA FINAL
+  ============================================ -->
+  <section id="cta-final" aria-labelledby="cta-final-title">
+    <div class="container">
+      <div class="reveal">
+        <h2 id="cta-final-title">Cada ocasión merece<br>un toque <em>irresistible</em></h2>
+        <p>Haz tu pedido hoy y descubre por qué cientos de clientes confían en Bocasugart para sus momentos más especiales.</p>
+        <div class="cta-final-btns">
+          <a href="https://wa.me/56935004998?text=Hola%2C+quiero+información+sobre+sus+servicios" target="_blank" rel="noopener noreferrer" class="btn btn-choco">Escribir por WhatsApp 🍫</a>
+          <a href="#contacto" class="btn btn-outline" style="color:var(--choco-deep);border-color:var(--choco);">Ver formulario de contacto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+
+          <div class="nav-logo footer-logo">
+            <img src="img/logo_transp_hor.png" alt="Bocasugart logo" class="logo-footer-img">
+          </div>
+
+          <p>Pastelería artesanal especializada en postres, desayunos y candy bar. Productos para disfrutar, regalar y revender en Chile.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/bocasugart/" target="_blank" class="footer-social-btn" title="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" onclick="return false;" class="footer-social-btn" title="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" onclick="return false;" class="footer-social-btn" title="Whatsapp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="#" onclick="return false;" class="footer-social-btn" title="TikTok">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h5>Servicios</h5>
+          <ul>
+            <li><a href="#servicios">Venta al detal</a></li>
+            <li><a href="#servicios">Por mayor y reventa</a></li>
+            <li><a href="#servicios">Candy bar eventos</a></li>
+            <li><a href="#servicios">Box desayunos</a></li>
+            <li><a href="#servicios">Alianzas comerciales</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Navegación</h5>
+          <ul>
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#proceso">Cómo funciona</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contacto</h5>
+          <ul>
+            <li><a href="tel:+56935004998">+56 9 3500 4998</a></li>
+            <li><a href="#contacto">Formulario web</a></li>
+            <li><a href="https://wa.me/56935004998" target="_blank" rel="noopener">WhatsApp directo</a></li>
+          </ul>
+          <div style="margin-top:20px">
+            <p style="font-size:0.78rem;color:rgba(245,240,235,0.45);line-height:1.6">Santiago, Región Metropolitana<br>Chile 🇨🇱</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Bocasugart. Todos los derechos reservados.</p>
+        <p>Hecho con 💛 en Santiago, Chile</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       WHATSAPP FLOAT
+  ============================================ -->
+  <a href="https://wa.me/56935004998?text=Hola%2C+quiero+información+sobre+sus+servicios" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Contactar por WhatsApp">
+    <div class="wa-btn">
+      <div class="wa-pulse"></div>
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </div>
+  </a>
+
+  <!-- ============================================
+       JAVASCRIPT
+  ============================================ -->
+  <script>
+    // ============================================
+    // NAVBAR SCROLL BEHAVIOR
+    // ============================================
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ============================================
+    // HAMBURGER MENU
+    // ============================================
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburgerBtn.addEventListener('click', toggleMenu);
+    hamburgerBtn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') toggleMenu(); });
+
+    function toggleMenu() {
+      hamburgerBtn.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburgerBtn.classList.remove('active');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // ============================================
+    // SMOOTH SCROLL
+    // ============================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // ============================================
+    // INTERSECTION OBSERVER (REVEAL)
+    // ============================================
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // ============================================
+    // TESTIMONIALS SLIDER
+    // ============================================
+    const sliderTrack = document.getElementById('sliderTrack');
+    const sliderDots = document.getElementById('sliderDots');
+    const slides = sliderTrack.querySelectorAll('.testimonial-card');
+    let currentSlide = 0;
+    let autoSlideTimer;
+
+    // Create dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Ir al testimonio ${i + 1}`);
+      dot.addEventListener('click', () => goToSlide(i));
+      sliderDots.appendChild(dot);
+    });
+
+    function goToSlide(index) {
+      currentSlide = (index + slides.length) % slides.length;
+      sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+      document.querySelectorAll('.slider-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === currentSlide);
+      });
+    }
+
+    function startAutoSlide() {
+      autoSlideTimer = setInterval(() => goToSlide(currentSlide + 1), 5000);
+    }
+
+    function stopAutoSlide() { clearInterval(autoSlideTimer); }
+
+    document.getElementById('sliderPrev').addEventListener('click', () => {
+      stopAutoSlide(); goToSlide(currentSlide - 1); startAutoSlide();
+    });
+    document.getElementById('sliderNext').addEventListener('click', () => {
+      stopAutoSlide(); goToSlide(currentSlide + 1); startAutoSlide();
+    });
+
+    startAutoSlide();
+
+    // ============================================
+    // FAQ ACCORDION
+    // ============================================
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(openItem => {
+          openItem.classList.remove('open');
+        });
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // ============================================
+    // CONTACT FORM VALIDATION
+    // ============================================
+    const contactForm = document.getElementById('contactForm');
+    const formMsg = document.getElementById('formMsg');
+
+    function showError(fieldId, errorId, message) {
+      const field = document.getElementById(fieldId);
+      const error = document.getElementById(errorId);
+      if (field && error) {
+        field.classList.add('error');
+        error.textContent = message;
+      }
+    }
+
+    function clearErrors() {
+      document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(el => {
+        el.classList.remove('error');
+      });
+      document.querySelectorAll('.form-error-msg').forEach(el => { el.textContent = ''; });
+    }
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      clearErrors();
+      formMsg.classList.remove('show', 'success', 'error');
+
+      const nombre = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const servicio = document.getElementById('servicio').value;
+      const mensaje = document.getElementById('mensaje').value.trim();
+
+      let valid = true;
+
+      if (!nombre) { showError('nombre', 'nombreError', 'El nombre es requerido.'); valid = false; }
+      if (!email) { showError('email', 'emailError', 'El correo es requerido.'); valid = false; }
+      else if (!validateEmail(email)) { showError('email', 'emailError', 'Ingresa un correo válido.'); valid = false; }
+      if (!servicio) { showError('servicio', 'servicioError', 'Selecciona un servicio.'); valid = false; }
+      if (!mensaje) { showError('mensaje', 'mensajeError', 'El mensaje es requerido.'); valid = false; }
+
+      if (valid) {
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        submitBtn.textContent = 'Enviando…';
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+          contactForm.reset();
+          contactForm.style.display = 'none';
+          formMsg.classList.add('show', 'success');
+          formMsg.querySelector('p').textContent = '🎉 ¡Mensaje enviado con éxito! Te contactaremos pronto. Mientras tanto, también puedes escribirnos por WhatsApp.';
+          submitBtn.textContent = 'Enviar mensaje ✦';
+          submitBtn.disabled = false;
+        }, 1600);
+      }
+    });
+  </script>
+
+</body>
+</html>
