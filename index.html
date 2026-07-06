@@ -575,6 +575,218 @@
     .service-card:hover p { color: rgba(245,240,235,0.78); }
 
     /* ============================================
+       GALERÍA
+    ============================================ */
+    #galeria {
+      background: var(--cream);
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .gallery-header .section-sub { margin: 0 auto; }
+
+    .gallery-grid {
+      column-count: 3;
+      column-gap: 22px;
+    }
+
+    .gallery-item {
+      display: block;
+      width: 100%;
+      break-inside: avoid;
+      margin-bottom: 22px;
+      position: relative;
+      border-radius: var(--r);
+      overflow: hidden;
+      border: none;
+      padding: 0;
+      background: none;
+      font: inherit;
+      text-align: inherit;
+      color: inherit;
+      cursor: pointer;
+      box-shadow: var(--shadow-s);
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .gallery-item:hover,
+    .gallery-item:focus-visible {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-l);
+    }
+
+    .gallery-item:focus-visible {
+      outline: 3px solid var(--rose);
+      outline-offset: 3px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img,
+    .gallery-item:focus-visible img {
+      transform: scale(1.06);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      background: linear-gradient(180deg, rgba(61,30,30,0) 50%, rgba(61,30,30,0.75) 100%);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .gallery-item:hover .gallery-overlay,
+    .gallery-item:focus-visible .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cream);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .gallery-overlay .gallery-zoom-icon {
+      width: 34px; height: 34px;
+      min-width: 34px;
+      border-radius: 50%;
+      background: rgba(232,175,175,0.9);
+      color: var(--choco-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+    }
+
+    /* Lightbox modal */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1100;
+      background: rgba(30,15,15,0.94);
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 88vw;
+      max-height: 82vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      transform: scale(0.96);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .lightbox.open .lightbox-content {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .lightbox-content img {
+      max-width: 88vw;
+      max-height: 72vh;
+      width: auto;
+      border-radius: var(--r);
+      box-shadow: var(--shadow-l);
+    }
+
+    .lightbox-caption {
+      margin-top: 16px;
+      color: var(--cream);
+      font-size: 0.92rem;
+      text-align: center;
+      max-width: 600px;
+    }
+
+    .lightbox-counter {
+      margin-top: 6px;
+      color: rgba(245,240,235,0.5);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+    }
+
+    .lightbox-btn {
+      position: fixed;
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(232,175,175,0.25);
+      background: rgba(255,255,255,0.08);
+      color: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      z-index: 1101;
+    }
+
+    .lightbox-btn:hover,
+    .lightbox-btn:focus-visible {
+      background: var(--rose);
+      color: var(--choco-deep);
+      border-color: var(--rose);
+    }
+
+    .lightbox-close {
+      top: 24px;
+      right: 24px;
+    }
+
+    .lightbox-prev {
+      left: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-next {
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid { column-count: 2; column-gap: 16px; }
+      .gallery-item { margin-bottom: 16px; }
+      .lightbox-prev { left: 10px; }
+      .lightbox-next { right: 10px; }
+      .lightbox-close { top: 14px; right: 14px; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid { column-count: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .gallery-item,
+      .gallery-item img,
+      .lightbox-content {
+        transition: none !important;
+      }
+    }
+
+    /* ============================================
        BENEFITS
     ============================================ */
     #beneficios {
@@ -1647,6 +1859,7 @@
 
       <ul class="nav-links" role="list">
         <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#galeria">Galería</a></li>
         <li><a href="#beneficios">Beneficios</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#blog">Blog</a></li>
@@ -1662,6 +1875,7 @@
   <!-- Mobile Menu -->
   <nav class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Menú móvil">
     <a href="#servicios" class="mobile-link">Servicios</a>
+    <a href="#galeria" class="mobile-link">Galería</a>
     <a href="#beneficios" class="mobile-link">Beneficios</a>
     <a href="#nosotros" class="mobile-link">Nosotros</a>
     <a href="#blog" class="mobile-link">Blog</a>
@@ -1787,6 +2001,68 @@
       </div>
     </div>
   </section>
+
+  <!-- ============================================
+       GALERÍA
+  ============================================ -->
+  <section id="galeria" aria-labelledby="galeria-title">
+    <div class="container">
+      <div class="gallery-header reveal">
+        <span class="section-label">Nuestros productos</span>
+        <h2 class="section-title" id="galeria-title">Una probadita <span>visual</span></h2>
+        <p class="section-sub">Alfajores, postres individuales y candy bar: así se ven los detalles que preparamos para cada pedido.</p>
+      </div>
+
+      <div class="gallery-grid reveal" id="galleryGrid">
+        <button type="button" class="gallery-item" data-index="0">
+          <img src="img/01.jpeg" alt="Alfajores artesanales recién horneados servidos en un plato" loading="lazy">
+          <span class="gallery-overlay"><span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i></span><span>Ampliar imagen</span></span>
+        </button>
+        <button type="button" class="gallery-item" data-index="1">
+          <img src="img/02.jpeg" alt="Postre individual de limón con crumble y rodajas de limón fresco" loading="lazy">
+          <span class="gallery-overlay"><span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i></span><span>Ampliar imagen</span></span>
+        </button>
+        <button type="button" class="gallery-item" data-index="2">
+          <img src="img/03.jpeg" alt="Mousse de maracuyá servido en vaso individual, primer plano en cuchara" loading="lazy">
+          <span class="gallery-overlay"><span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i></span><span>Ampliar imagen</span></span>
+        </button>
+        <button type="button" class="gallery-item" data-index="3">
+          <img src="img/04.jpeg" alt="Variedad de postres al detal: flan, alfajores de coco y tiramisú en vaso" loading="lazy">
+          <span class="gallery-overlay"><span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i></span><span>Ampliar imagen</span></span>
+        </button>
+        <button type="button" class="gallery-item" data-index="4">
+          <img src="img/05.jpeg" alt="Candy bar de postres en shots de chocolate para fiesta de cumpleaños" loading="lazy">
+          <span class="gallery-overlay"><span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i></span><span>Ampliar imagen</span></span>
+        </button>
+        <button type="button" class="gallery-item" data-index="5">
+          <img src="img/06.jpeg" alt="Alfajor de manjar bañado en coco rallado, sostenido en la mano" loading="lazy">
+          <span class="gallery-overlay"><span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i></span><span>Ampliar imagen</span></span>
+        </button>
+        <button type="button" class="gallery-item" data-index="6">
+          <img src="img/07.jpeg" alt="Box de detalle Bocasugart abierto con alfajores artesanales" loading="lazy">
+          <span class="gallery-overlay"><span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i></span><span>Ampliar imagen</span></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox modal -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada de la galería" aria-hidden="true">
+    <button type="button" class="lightbox-btn lightbox-close" id="lightboxClose" aria-label="Cerrar vista ampliada">
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+    <button type="button" class="lightbox-btn lightbox-prev" id="lightboxPrev" aria-label="Imagen anterior">
+      <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+    </button>
+    <button type="button" class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Imagen siguiente">
+      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+    </button>
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightboxImg">
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+      <p class="lightbox-counter" id="lightboxCounter"></p>
+    </div>
+  </div>
 
   <!-- ============================================
        BENEFICIOS
@@ -2234,6 +2510,7 @@
         <div>
           <h5>Navegación</h5>
           <ul>
+            <li><a href="#galeria">Galería</a></li>
             <li><a href="#beneficios">Beneficios</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
             <li><a href="#proceso">Cómo funciona</a></li>
@@ -2451,6 +2728,75 @@
           submitBtn.disabled = false;
         }, 1600);
       }
+    });
+
+    // ============================================
+    // GALLERY LIGHTBOX
+    // ============================================
+    const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+
+    let currentGalleryIndex = 0;
+    let lastFocusedGalleryItem = null;
+
+    function openLightbox(index) {
+      currentGalleryIndex = index;
+      lastFocusedGalleryItem = galleryItems[index];
+      updateLightboxContent();
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      lightboxClose.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lastFocusedGalleryItem) lastFocusedGalleryItem.focus();
+    }
+
+    function updateLightboxContent() {
+      const img = galleryItems[currentGalleryIndex].querySelector('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCaption.textContent = img.alt;
+      lightboxCounter.textContent = `${currentGalleryIndex + 1} / ${galleryItems.length}`;
+    }
+
+    function showNext() {
+      currentGalleryIndex = (currentGalleryIndex + 1) % galleryItems.length;
+      updateLightboxContent();
+    }
+
+    function showPrev() {
+      currentGalleryIndex = (currentGalleryIndex - 1 + galleryItems.length) % galleryItems.length;
+      updateLightboxContent();
+    }
+
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', () => openLightbox(index));
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxNext.addEventListener('click', showNext);
+    lightboxPrev.addEventListener('click', showPrev);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'ArrowLeft') showPrev();
     });
 
     // BACK TO TOP
