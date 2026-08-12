@@ -1375,6 +1375,142 @@
 
     .blog-link:hover { gap: 10px; }
 
+    .blog-thumb svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Blog article modal */
+    .blog-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1200;
+      background: rgba(61,30,30,0.65);
+      backdrop-filter: blur(4px);
+      padding: 4vh 16px;
+      overflow-y: auto;
+    }
+
+    .blog-modal.open { display: block; }
+
+    .blog-modal-content {
+      background: var(--cream);
+      max-width: 760px;
+      margin: 0 auto;
+      border-radius: 22px;
+      overflow: hidden;
+      position: relative;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+
+    .blog-modal.open .blog-modal-content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .blog-modal-cover {
+      height: 260px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blog-modal-cover svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .blog-modal-close {
+      position: absolute;
+      top: 16px; right: 16px;
+      z-index: 5;
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      background: rgba(255,255,255,0.92);
+      color: var(--choco-deep);
+      font-size: 1.2rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform var(--transition), background var(--transition);
+    }
+
+    .blog-modal-close:hover { transform: rotate(90deg); background: #fff; }
+
+    .blog-modal-body {
+      padding: 34px 42px 44px;
+    }
+
+    .blog-modal-body .blog-tag {
+      position: static;
+      display: inline-block;
+      background: var(--choco-deep);
+      color: var(--cream);
+      margin-bottom: 14px;
+    }
+
+    .blog-modal-body h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--choco-deep);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .blog-modal-body .blog-meta { margin-bottom: 22px; }
+
+    .blog-modal-body h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--choco);
+      margin: 26px 0 10px;
+    }
+
+    .blog-modal-body p,
+    .blog-modal-body li {
+      font-size: 0.93rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .blog-modal-body ul,
+    .blog-modal-body ol {
+      padding-left: 22px;
+      margin-bottom: 14px;
+    }
+
+    .blog-modal-body li { margin-bottom: 8px; }
+
+    .blog-modal-body strong { color: var(--choco-deep); }
+
+    .blog-modal-cta {
+      margin-top: 28px;
+      padding: 22px 26px;
+      background: #fff;
+      border: 1px solid var(--beige);
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .blog-modal-cta p { margin-bottom: 14px; }
+
+    @media (max-width: 640px) {
+      .blog-modal { padding: 2vh 10px; }
+      .blog-modal-body { padding: 26px 22px 32px; }
+      .blog-modal-cover { height: 180px; }
+      .blog-modal-body h2 { font-size: 1.3rem; }
+    }
+
     /* ============================================
        FAQ
     ============================================ */
@@ -2270,40 +2406,106 @@
         <p class="section-sub">Recursos gratuitos para emprendedores y clientes que quieren saber más sobre el mundo dulce y el negocio de la repostería.</p>
       </div>
       <div class="blog-grid">
-        <article class="blog-card reveal">
+        <article class="blog-card reveal" data-blog="0" style="cursor:pointer">
           <div class="blog-thumb">
             <div class="blog-tag">Emprendimiento</div>
-            🛒
+            <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustración de un minimarket con vitrina de postres">
+              <rect width="400" height="200" fill="#6B3E3E"/>
+              <circle cx="340" cy="30" r="60" fill="#8B5046" opacity="0.5"/>
+              <circle cx="40" cy="180" r="70" fill="#8B5046" opacity="0.35"/>
+              <rect x="110" y="70" width="180" height="110" rx="8" fill="#F5F0EB"/>
+              <path d="M100 70 L120 40 H280 L300 70 Z" fill="#5A2E2E"/>
+              <g>
+                <rect x="100" y="62" width="25" height="14" rx="7" fill="#CFA18D"/>
+                <rect x="125" y="62" width="25" height="14" rx="7" fill="#F5F0EB"/>
+                <rect x="150" y="62" width="25" height="14" rx="7" fill="#CFA18D"/>
+                <rect x="175" y="62" width="25" height="14" rx="7" fill="#F5F0EB"/>
+                <rect x="200" y="62" width="25" height="14" rx="7" fill="#CFA18D"/>
+                <rect x="225" y="62" width="25" height="14" rx="7" fill="#F5F0EB"/>
+                <rect x="250" y="62" width="25" height="14" rx="7" fill="#CFA18D"/>
+                <rect x="275" y="62" width="25" height="14" rx="7" fill="#F5F0EB"/>
+              </g>
+              <rect x="125" y="95" width="70" height="8" rx="4" fill="#D8B7A6"/>
+              <circle cx="138" cy="88" r="8" fill="#CFA18D"/>
+              <circle cx="160" cy="88" r="8" fill="#8FBF9F"/>
+              <circle cx="182" cy="88" r="8" fill="#E8AFAF"/>
+              <rect x="125" y="120" width="70" height="8" rx="4" fill="#D8B7A6"/>
+              <rect x="130" y="106" width="14" height="14" rx="3" fill="#5A2E2E"/>
+              <rect x="152" y="106" width="14" height="14" rx="3" fill="#CFA18D"/>
+              <rect x="174" y="106" width="14" height="14" rx="3" fill="#5A2E2E"/>
+              <rect x="220" y="100" width="50" height="80" rx="4" fill="#5A2E2E"/>
+              <circle cx="262" cy="140" r="4" fill="#CFA18D"/>
+              <rect x="125" y="140" width="70" height="40" rx="4" fill="#E8DFD6"/>
+              <rect x="135" y="150" width="50" height="6" rx="3" fill="#CFA18D"/>
+              <rect x="135" y="162" width="35" height="6" rx="3" fill="#D8B7A6"/>
+            </svg>
           </div>
           <div class="blog-body">
             <p class="blog-meta">15 Abril 2026 · 5 min lectura</p>
             <h3>Cómo monetizar tu minimarket revendiendo postres artesanales en 2026</h3>
             <p>Descubre cómo negocios locales en Chile están generando ingresos adicionales con poco espacio y sin invertir en producción propia. Una guía práctica para empezar hoy.</p>
-            <a href="#" class="blog-link">Leer artículo →</a>
+            <span class="blog-link">Leer artículo →</span>
           </div>
         </article>
-        <article class="blog-card reveal" style="transition-delay:0.15s">
+        <article class="blog-card reveal" data-blog="1" style="transition-delay:0.15s; cursor:pointer">
           <div class="blog-thumb">
             <div class="blog-tag">Financiamiento</div>
-            💰
+            <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustración de monedas y crecimiento de un emprendimiento">
+              <rect width="400" height="200" fill="#CFA18D"/>
+              <circle cx="60" cy="40" r="70" fill="#D8B7A6" opacity="0.6"/>
+              <circle cx="360" cy="170" r="80" fill="#D8B7A6" opacity="0.5"/>
+              <rect x="120" y="130" width="34" height="50" rx="4" fill="#5A2E2E"/>
+              <rect x="164" y="105" width="34" height="75" rx="4" fill="#6B3E3E"/>
+              <rect x="208" y="80" width="34" height="100" rx="4" fill="#5A2E2E"/>
+              <rect x="252" y="55" width="34" height="125" rx="4" fill="#6B3E3E"/>
+              <path d="M128 110 L180 85 L225 60 L268 35" stroke="#F5F0EB" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <path d="M252 30 L268 35 L262 51" stroke="#F5F0EB" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="90" cy="150" r="20" fill="#E8C9A0" stroke="#5A2E2E" stroke-width="3"/>
+              <text x="90" y="158" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#5A2E2E">$</text>
+              <circle cx="310" cy="150" r="16" fill="#E8C9A0" stroke="#5A2E2E" stroke-width="3"/>
+              <text x="310" y="156" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#5A2E2E">$</text>
+              <path d="M330 90 q10 -25 0 -40 q-10 15 0 40" fill="#8FBF9F"/>
+              <path d="M330 90 q-18 -8 -22 -28 q20 4 22 28" fill="#8FBF9F"/>
+            </svg>
           </div>
           <div class="blog-body">
             <p class="blog-meta">02 Abril 2026 · 7 min lectura</p>
             <h3>Fondos CORFO y FOSIS 2026: guía completa para postular si tienes una pastelería</h3>
             <p>Los emprendedores del rubro alimentario tienen acceso a capital semilla y créditos blandos. Te explicamos qué programas existen, cómo postular y qué errores evitar.</p>
-            <a href="#" class="blog-link">Leer artículo →</a>
+            <span class="blog-link">Leer artículo →</span>
           </div>
         </article>
-        <article class="blog-card reveal" style="transition-delay:0.3s">
+        <article class="blog-card reveal" data-blog="2" style="transition-delay:0.3s; cursor:pointer">
           <div class="blog-thumb">
             <div class="blog-tag">Marketing Digital</div>
-            📱
+            <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustración de un teléfono con redes sociales y mensajes">
+              <rect width="400" height="200" fill="#8B9B7A"/>
+              <circle cx="350" cy="40" r="65" fill="#8FBF9F" opacity="0.55"/>
+              <circle cx="50" cy="170" r="75" fill="#8FBF9F" opacity="0.45"/>
+              <rect x="160" y="40" width="80" height="150" rx="14" fill="#3D1E1E"/>
+              <rect x="168" y="52" width="64" height="118" rx="6" fill="#F5F0EB"/>
+              <rect x="176" y="62" width="48" height="34" rx="4" fill="#CFA18D"/>
+              <circle cx="186" cy="72" r="5" fill="#F5F0EB"/>
+              <rect x="176" y="104" width="34" height="6" rx="3" fill="#D8B7A6"/>
+              <rect x="176" y="116" width="48" height="6" rx="3" fill="#E8DFD6"/>
+              <rect x="176" y="128" width="42" height="6" rx="3" fill="#E8DFD6"/>
+              <circle cx="200" cy="180" r="5" fill="#F5F0EB"/>
+              <g transform="translate(255,60)">
+                <rect x="0" y="0" width="60" height="40" rx="12" fill="#F5F0EB"/>
+                <path d="M12 38 L12 50 L26 38 Z" fill="#F5F0EB"/>
+                <circle cx="18" cy="20" r="4" fill="#CFA18D"/>
+                <circle cx="30" cy="20" r="4" fill="#CFA18D"/>
+                <circle cx="42" cy="20" r="4" fill="#CFA18D"/>
+              </g>
+              <path d="M120 80 c-8 -10 -24 -4 -24 8 c0 10 14 18 24 24 c10 -6 24 -14 24 -24 c0 -12 -16 -18 -24 -8 Z" fill="#E8AFAF"/>
+              <path d="M290 130 c-5 -7 -16 -3 -16 5 c0 7 9 12 16 16 c7 -4 16 -9 16 -16 c0 -8 -11 -12 -16 -5 Z" fill="#F5F0EB"/>
+            </svg>
           </div>
           <div class="blog-body">
             <p class="blog-meta">20 Marzo 2026 · 6 min lectura</p>
             <h3>Instagram y WhatsApp Business: las herramientas clave para vender más postres en 2026</h3>
             <p>El marketing digital ya no es opcional para las pastelerías. Aprende estrategias concretas de contenido, historias y automatización para atraer más clientes sin gastar en publicidad paga.</p>
-            <a href="#" class="blog-link">Leer artículo →</a>
+            <span class="blog-link">Leer artículo →</span>
           </div>
         </article>
       </div>
@@ -2555,6 +2757,149 @@
   <!-- ============================================
        JAVASCRIPT
   ============================================ -->
+  <!-- ============================================
+       BLOG MODALS
+  ============================================ -->
+  <div class="blog-modal" id="blogModal0" role="dialog" aria-modal="true" aria-labelledby="blogModal0-title" aria-hidden="true">
+    <div class="blog-modal-content">
+      <button type="button" class="blog-modal-close" aria-label="Cerrar artículo">✕</button>
+      <div class="blog-modal-cover"></div>
+      <div class="blog-modal-body">
+        <span class="blog-tag">Emprendimiento</span>
+        <h2 id="blogModal0-title">Cómo monetizar tu minimarket revendiendo postres artesanales en 2026</h2>
+        <p class="blog-meta">15 Abril 2026 · 5 min lectura</p>
+
+        <p>Si tienes un minimarket, almacén de barrio o cafetería en Chile, probablemente ya notaste que los márgenes de los productos tradicionales son cada vez más ajustados. La buena noticia: los postres artesanales se han convertido en una de las categorías con mejor rotación y margen del retail pequeño, y no necesitas producir nada para aprovecharla.</p>
+
+        <h3>¿Por qué los postres artesanales funcionan tan bien?</h3>
+        <p>A diferencia de los productos industriales, un postre artesanal genera <strong>compra por impulso</strong>: el cliente que entró por pan o bebidas ve una cheesecake o un brownie bien presentado en la vitrina y lo agrega sin pensarlo. Además, es un producto que la gran cadena de supermercados no ofrece con la misma frescura ni presentación, lo que te diferencia de inmediato.</p>
+        <ul>
+          <li><strong>Margen atractivo:</strong> la reventa de postres artesanales permite márgenes de entre un 30% y un 50%, muy por sobre el promedio de abarrotes.</li>
+          <li><strong>Poco espacio:</strong> basta un rincón refrigerado o una vitrina pequeña para exhibir entre 10 y 20 unidades.</li>
+          <li><strong>Cero producción:</strong> tu proveedor se encarga de elaborar, tú solo vendes.</li>
+        </ul>
+
+        <h3>Paso a paso para empezar</h3>
+        <ol>
+          <li><strong>Elige un proveedor confiable.</strong> Busca una pastelería con resolución sanitaria, entregas puntuales y productos con buena duración refrigerada. Pide una degustación antes de comprometerte.</li>
+          <li><strong>Parte con un mix pequeño.</strong> Tres o cuatro variedades son suficientes para medir qué prefiere tu clientela: brownies, cheesecakes en vaso y alfajores suelen ser apuestas seguras.</li>
+          <li><strong>Cuida la exhibición.</strong> Ubica los postres cerca de la caja, a la altura de la vista, con precios visibles. La vitrina limpia y ordenada vende sola.</li>
+          <li><strong>Registra la rotación.</strong> Anota qué se vende y qué no durante las primeras dos semanas, y ajusta tu pedido semanal con esos datos.</li>
+          <li><strong>Comunica la novedad.</strong> Un cartel en la entrada y una historia en Instagram avisando "llegaron postres artesanales" puede duplicar la venta de la primera semana.</li>
+        </ol>
+
+        <h3>¿Cuánto puedes ganar?</h3>
+        <p>Un minimarket que vende 15 postres diarios con un margen promedio de $800 por unidad genera cerca de <strong>$360.000 adicionales al mes</strong>, sin contratar personal ni invertir en equipamiento mayor. Si tu local tiene buen flujo, escalar a 30 unidades diarias es totalmente realista.</p>
+
+        <h3>Errores comunes que debes evitar</h3>
+        <ul>
+          <li>Comprar grandes volúmenes antes de conocer la rotación real de tu local.</li>
+          <li>Descuidar la cadena de frío: un postre en mal estado daña tu reputación, no solo la del proveedor.</li>
+          <li>No renovar el mix: la variedad periódica mantiene el interés de los clientes frecuentes.</li>
+        </ul>
+
+        <div class="blog-modal-cta">
+          <p><strong>¿Quieres partir con un proveedor probado?</strong> En Bocasugart trabajamos con minimarkets y almacenes de todo Santiago con precios mayoristas y entregas semanales.</p>
+          <a href="https://wa.me/56935004998?text=Hola%2C+tengo+un+negocio+y+quiero+información+sobre+reventa+de+postres" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Consultar precios mayoristas 🍫</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="blog-modal" id="blogModal1" role="dialog" aria-modal="true" aria-labelledby="blogModal1-title" aria-hidden="true">
+    <div class="blog-modal-content">
+      <button type="button" class="blog-modal-close" aria-label="Cerrar artículo">✕</button>
+      <div class="blog-modal-cover"></div>
+      <div class="blog-modal-body">
+        <span class="blog-tag">Financiamiento</span>
+        <h2 id="blogModal1-title">Fondos CORFO y FOSIS 2026: guía completa para postular si tienes una pastelería</h2>
+        <p class="blog-meta">02 Abril 2026 · 7 min lectura</p>
+
+        <p>Conseguir capital es uno de los mayores desafíos para quienes emprenden en el rubro alimentario. Lo que pocos saben es que el Estado chileno dispone cada año de fondos concursables pensados justamente para negocios como una pastelería, una banquetería o un servicio de candy bar. Aquí te contamos cuáles son y cómo postular con éxito.</p>
+
+        <h3>Los principales instrumentos disponibles</h3>
+        <ul>
+          <li><strong>Semilla Inicia (CORFO):</strong> subsidio para emprendimientos en etapa temprana con potencial de crecimiento. Financia hasta $15 millones para validar y desarrollar tu negocio, con foco en innovación (por ejemplo, líneas de postres sin azúcar, veganos o con envases sustentables).</li>
+          <li><strong>Yo Emprendo Semilla (FOSIS):</strong> orientado a personas que inician o desean fortalecer un negocio pequeño. Entrega capital directo más capacitación. Ideal si tu pastelería aún funciona desde casa.</li>
+          <li><strong>Capital Semilla y Capital Abeja (SERCOTEC):</strong> concursos anuales con montos de hasta $3,5 millones para nuevos negocios. Capital Abeja está reservado para emprendedoras, un punto relevante en un rubro liderado mayoritariamente por mujeres.</li>
+          <li><strong>Créditos con garantía estatal (FOGAPE):</strong> si prefieres financiamiento bancario, la garantía estatal facilita acceder a créditos con mejores tasas para capital de trabajo o equipamiento.</li>
+        </ul>
+
+        <h3>Requisitos generales que debes tener al día</h3>
+        <ol>
+          <li><strong>Inicio de actividades en el SII</strong>, idealmente en primera categoría.</li>
+          <li><strong>Resolución sanitaria</strong> del local o cocina donde produces: es el requisito que más postulaciones alimentarias deja fuera.</li>
+          <li><strong>Registro Social de Hogares</strong> (para fondos FOSIS).</li>
+          <li>Un <strong>plan de negocio simple</strong>: qué vendes, a quién, cuánto cuesta producir y cuánto proyectas vender.</li>
+        </ol>
+
+        <h3>Consejos para una postulación ganadora</h3>
+        <ul>
+          <li><strong>Cuenta una historia con números.</strong> "Vendo 200 postres mensuales y con el fondo compraré un horno que me permitirá producir 600" es mucho más potente que "quiero crecer".</li>
+          <li><strong>Adjunta evidencia:</strong> fotos de tus productos, pantallazos de ventas, comentarios de clientes. Los evaluadores premian negocios que ya demuestran tracción.</li>
+          <li><strong>Postula a tiempo:</strong> las convocatorias de SERCOTEC y FOSIS suelen abrir entre marzo y mayo, y se agotan rápido. Revisa mensualmente los sitios oficiales.</li>
+          <li><strong>No inventes gastos.</strong> Los fondos se rinden con boletas y facturas; presupuesta solo lo que realmente necesitas.</li>
+        </ul>
+
+        <h3>Errores que debes evitar</h3>
+        <p>Postular sin resolución sanitaria, copiar planes de negocio genéricos de internet o pedir el monto máximo sin justificarlo son las tres causas más frecuentes de rechazo. Dedica tiempo a tu postulación: un buen formulario puede significar el impulso que tu pastelería necesita para pasar al siguiente nivel.</p>
+
+        <div class="blog-modal-cta">
+          <p><strong>¿Estás haciendo crecer tu negocio dulce?</strong> Una alianza comercial con Bocasugart puede complementar tu oferta mientras consolidas tu producción propia.</p>
+          <a href="https://wa.me/56935004998?text=Hola%2C+quiero+información+sobre+alianzas+comerciales" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Conversemos 🍫</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="blog-modal" id="blogModal2" role="dialog" aria-modal="true" aria-labelledby="blogModal2-title" aria-hidden="true">
+    <div class="blog-modal-content">
+      <button type="button" class="blog-modal-close" aria-label="Cerrar artículo">✕</button>
+      <div class="blog-modal-cover"></div>
+      <div class="blog-modal-body">
+        <span class="blog-tag">Marketing Digital</span>
+        <h2 id="blogModal2-title">Instagram y WhatsApp Business: las herramientas clave para vender más postres en 2026</h2>
+        <p class="blog-meta">20 Marzo 2026 · 6 min lectura</p>
+
+        <p>En el rubro de la repostería, la primera venta entra por los ojos. Instagram es hoy la vitrina principal de cualquier pastelería en Chile, y WhatsApp Business el canal donde esa vitrina se convierte en pedidos. Usadas en conjunto, y sin gastar un peso en publicidad, pueden transformar tu flujo de clientes.</p>
+
+        <h3>Instagram: tu vitrina permanente</h3>
+        <ul>
+          <li><strong>Fotografía con luz natural.</strong> No necesitas equipo profesional: una mesa junto a la ventana, un fondo neutro y tu postre recién decorado logran más que cualquier filtro.</li>
+          <li><strong>Reels cortos de proceso.</strong> Los videos de 15 a 30 segundos mostrando el glaseado, el corte de una torta o el armado de un box son el formato con mayor alcance orgánico. Publica 2 a 3 por semana.</li>
+          <li><strong>Historias diarias con interacción.</strong> Encuestas ("¿chocolate o maracuyá?"), cajas de preguntas y cuentas regresivas para lanzamientos mantienen tu cuenta activa en el algoritmo.</li>
+          <li><strong>Contenido de clientes.</strong> Reposta las historias donde te etiquetan: es prueba social gratuita y multiplica tu alcance entre sus contactos.</li>
+          <li><strong>Datos en la biografía.</strong> Comuna, botón de WhatsApp y qué vendes en una línea. Si un cliente debe adivinar cómo pedirte, ya lo perdiste.</li>
+        </ul>
+
+        <h3>WhatsApp Business: donde se cierra la venta</h3>
+        <ul>
+          <li><strong>Catálogo cargado.</strong> Sube tus productos con foto, precio y descripción; evita el eterno "¿me mandas la lista de precios?".</li>
+          <li><strong>Respuestas rápidas.</strong> Configura atajos para las preguntas frecuentes: precios, plazos de encargo, cobertura de despacho y métodos de pago.</li>
+          <li><strong>Mensaje de bienvenida y de ausencia.</strong> Que nadie escriba sin recibir respuesta, incluso fuera de horario.</li>
+          <li><strong>Etiquetas de clientes.</strong> Clasifica los chats ("nuevo pedido", "pagado", "cliente frecuente", "mayorista") para no perder ninguna venta en el desorden.</li>
+          <li><strong>Estados de WhatsApp.</strong> Publica ahí tus productos del día: muchos clientes los revisan más que Instagram.</li>
+        </ul>
+
+        <h3>El flujo que funciona</h3>
+        <ol>
+          <li>El cliente descubre tu postre en un reel o historia de Instagram.</li>
+          <li>Toca el enlace de tu biografía y llega directo a tu WhatsApp.</li>
+          <li>El catálogo y las respuestas rápidas resuelven sus dudas en minutos.</li>
+          <li>Cierras el pedido y lo etiquetas para hacer seguimiento y volver a venderle después.</li>
+        </ol>
+
+        <h3>Constancia antes que perfección</h3>
+        <p>El error más común es publicar mucho durante una semana y luego desaparecer un mes. Es preferible un ritmo sostenible —tres publicaciones semanales y historias diarias— que rachas intensas. En tres meses de constancia notarás la diferencia en consultas y pedidos.</p>
+
+        <div class="blog-modal-cta">
+          <p><strong>¿Buscas productos que luzcan increíbles en tus redes?</strong> Nuestros postres y box detalles están pensados para enamorar también en cámara.</p>
+          <a href="https://wa.me/56935004998?text=Hola%2C+quiero+información+sobre+sus+productos" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver productos 🍫</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     // ============================================
     // NAVBAR SCROLL BEHAVIOR
@@ -2797,6 +3142,52 @@
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowRight') showNext();
       if (e.key === 'ArrowLeft') showPrev();
+    });
+
+    // BLOG MODALS
+    const blogCards = document.querySelectorAll('.blog-card[data-blog]');
+    let blogTrigger = null;
+
+    blogCards.forEach((card) => {
+      const modal = document.getElementById('blogModal' + card.dataset.blog);
+      if (!modal) return;
+      const cover = modal.querySelector('.blog-modal-cover');
+      const cardSvg = card.querySelector('.blog-thumb svg');
+      if (cover && cardSvg && !cover.hasChildNodes()) {
+        cover.appendChild(cardSvg.cloneNode(true));
+      }
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'button');
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+      });
+      card.addEventListener('click', () => {
+        blogTrigger = card;
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        modal.querySelector('.blog-modal-close').focus();
+      });
+    });
+
+    function closeBlogModal(modal) {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (blogTrigger) { blogTrigger.focus(); blogTrigger = null; }
+    }
+
+    document.querySelectorAll('.blog-modal').forEach((modal) => {
+      modal.querySelector('.blog-modal-close').addEventListener('click', () => closeBlogModal(modal));
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeBlogModal(modal);
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      const openModal = document.querySelector('.blog-modal.open');
+      if (openModal) closeBlogModal(openModal);
     });
 
     // BACK TO TOP
