@@ -1,0 +1,86 @@
+{
+  "site": "https://bocasugart.cl",
+  "nombre": "Bocasugart",
+  "lang": "es-CL",
+  "favicon": "img/favicon.png",
+  "ancla_blog": "#blog",
+  "logo_html": "<img src=\"img/logo_transp_hor.png\" alt=\"Bocasugart\" width=\"1029\" height=\"242\">",
+  "nav": [
+    [
+      "Productos",
+      "#servicios"
+    ],
+    [
+      "Nosotros",
+      "#nosotros"
+    ],
+    [
+      "Galería",
+      "#galeria"
+    ],
+    [
+      "Blog",
+      "#blog"
+    ],
+    [
+      "Contacto",
+      "#contacto"
+    ]
+  ],
+  "cta": {
+    "titulo": "¿Te tentaste?",
+    "texto": "Pide tus postres, box detalles o candy bar, o consulta precios mayoristas para tu negocio.",
+    "boton": "Escribir por WhatsApp",
+    "boton_corto": "WhatsApp",
+    "url": "https://wa.me/56935004998?text=Hola%2C+le%C3%AD+su+blog+y+quiero+informaci%C3%B3n"
+  },
+  "fuentes_html": "<style id=\"local-fonts\">\n/* Tipografías alojadas en el sitio (Fontsource, licencia OFL) */\n@font-face{font-family:\"Playfair Display\";font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/playfair-display-latin-400-normal.woff2) format(\"woff2\")}\n@font-face{font-family:\"Playfair Display\";font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/playfair-display-latin-400-italic.woff2) format(\"woff2\")}\n@font-face{font-family:\"Playfair Display\";font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/playfair-display-latin-700-normal.woff2) format(\"woff2\")}\n@font-face{font-family:\"Playfair Display\";font-style:normal;font-weight:900;font-display:swap;src:url(assets/fonts/playfair-display-latin-900-normal.woff2) format(\"woff2\")}\n@font-face{font-family:\"DM Sans\";font-style:normal;font-weight:300;font-display:swap;src:url(assets/fonts/dm-sans-latin-300-normal.woff2) format(\"woff2\")}\n@font-face{font-family:\"DM Sans\";font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/dm-sans-latin-400-normal.woff2) format(\"woff2\")}\n@font-face{font-family:\"DM Sans\";font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/dm-sans-latin-500-normal.woff2) format(\"woff2\")}\n@font-face{font-family:\"DM Sans\";font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/dm-sans-latin-600-normal.woff2) format(\"woff2\")}\n</style>",
+  "tema": {
+    "fondo": "#F5F0EB",
+    "fondo2": "#FFFFFF",
+    "texto": "#2C1810",
+    "suave": "#5C3D35",
+    "acento": "#6B3E3E",
+    "acento2": "#CFA18D",
+    "borde": "#E6D8CE",
+    "titulos": "#3D1E1E",
+    "boton_texto": "#FFFFFF",
+    "fuente_titulos": "'Playfair Display',serif",
+    "fuente_texto": "'DM Sans',sans-serif",
+    "cabecera": "#3D1E1E",
+    "cabecera_texto": "#F5F0EB"
+  },
+  "og_home": {
+    "imagen": "img/01.jpeg",
+    "kicker": "Postres artesanales",
+    "titulo": "Postres, box detalles y candy bar en Santiago"
+  },
+  "fuente": {
+    "tipo": "dom",
+    "modal": ".blog-modal[data-slug]",
+    "titulo": "h2",
+    "categoria": ".blog-tag",
+    "cuerpo": ".blog-modal-body",
+    "excluir": [
+      ".blog-tag",
+      "h2",
+      ".blog-meta",
+      ".blog-modal-cta"
+    ]
+  },
+  "llms": {
+    "resumen": "Bocasugart es una pastelería artesanal ítalo-venezolana en Santiago de Chile, de la emprendedora Oriana Palumbo. Elabora postres artesanales (como marquesas y tiramisú), box detalles para regalar y candy bar para eventos, y ofrece venta mayorista y alianzas comerciales para minimarkets, almacenes, cafeterías y supermercados.",
+    "datos": [
+      "Ubicación: Santiago, Chile",
+      "Contacto: WhatsApp +56 9 3500 4998"
+    ],
+    "paginas": [
+      [
+        "Inicio",
+        "",
+        "productos, beneficios, cómo funciona, nosotros, galería, blog, preguntas frecuentes y contacto"
+      ]
+    ],
+    "titulo_blog": "Blog"
+  }
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustración de un teléfono con redes sociales y mensajes">
+              <rect width="400" height="200" fill="#8B9B7A"/>
+              <circle cx="350" cy="40" r="65" fill="#8FBF9F" opacity="0.55"/>
+              <circle cx="50" cy="170" r="75" fill="#8FBF9F" opacity="0.45"/>
+              <rect x="160" y="40" width="80" height="150" rx="14" fill="#3D1E1E"/>
+              <rect x="168" y="52" width="64" height="118" rx="6" fill="#F5F0EB"/>
+              <rect x="176" y="62" width="48" height="34" rx="4" fill="#CFA18D"/>
+              <circle cx="186" cy="72" r="5" fill="#F5F0EB"/>
+              <rect x="176" y="104" width="34" height="6" rx="3" fill="#D8B7A6"/>
+              <rect x="176" y="116" width="48" height="6" rx="3" fill="#E8DFD6"/>
+              <rect x="176" y="128" width="42" height="6" rx="3" fill="#E8DFD6"/>
+              <circle cx="200" cy="180" r="5" fill="#F5F0EB"/>
+              <g transform="translate(255,60)">
+                <rect x="0" y="0" width="60" height="40" rx="12" fill="#F5F0EB"/>
+                <path d="M12 38 L12 50 L26 38 Z" fill="#F5F0EB"/>
+                <circle cx="18" cy="20" r="4" fill="#CFA18D"/>
+                <circle cx="30" cy="20" r="4" fill="#CFA18D"/>
+                <circle cx="42" cy="20" r="4" fill="#CFA18D"/>
+              </g>
+              <path d="M120 80 c-8 -10 -24 -4 -24 8 c0 10 14 18 24 24 c10 -6 24 -14 24 -24 c0 -12 -16 -18 -24 -8 Z" fill="#E8AFAF"/>
+              <path d="M290 130 c-5 -7 -16 -3 -16 5 c0 7 9 12 16 16 c7 -4 16 -9 16 -16 c0 -8 -11 -12 -16 -5 Z" fill="#F5F0EB"/>
+            </svg>

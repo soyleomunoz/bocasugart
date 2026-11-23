@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustración de un minimarket con vitrina de postres">
+              <rect width="400" height="200" fill="#6B3E3E"/>
+              <circle cx="340" cy="30" r="60" fill="#8B5046" opacity="0.5"/>
+              <circle cx="40" cy="180" r="70" fill="#8B5046" opacity="0.35"/>
+              <rect x="110" y="70" width="180" height="110" rx="8" fill="#F5F0EB"/>
+              <path d="M100 70 L120 40 H280 L300 70 Z" fill="#5A2E2E"/>
+              <g>
+                <rect x="100" y="62" width="25" height="14" rx="7" fill="#CFA18D"/>
+                <rect x="125" y="62" width="25" height="14" rx="7" fill="#F5F0EB"/>
+                <rect x="150" y="62" width="25" height="14" rx="7" fill="#CFA18D"/>
+                <rect x="175" y="62" width="25" height="14" rx="7" fill="#F5F0EB"/>
+                <rect x="200" y="62" width="25" height="14" rx="7" fill="#CFA18D"/>
+                <rect x="225" y="62" width="25" height="14" rx="7" fill="#F5F0EB"/>
+                <rect x="250" y="62" width="25" height="14" rx="7" fill="#CFA18D"/>
+                <rect x="275" y="62" width="25" height="14" rx="7" fill="#F5F0EB"/>
+              </g>
+              <rect x="125" y="95" width="70" height="8" rx="4" fill="#D8B7A6"/>
+              <circle cx="138" cy="88" r="8" fill="#CFA18D"/>
+              <circle cx="160" cy="88" r="8" fill="#8FBF9F"/>
+              <circle cx="182" cy="88" r="8" fill="#E8AFAF"/>
+              <rect x="125" y="120" width="70" height="8" rx="4" fill="#D8B7A6"/>
+              <rect x="130" y="106" width="14" height="14" rx="3" fill="#5A2E2E"/>
+              <rect x="152" y="106" width="14" height="14" rx="3" fill="#CFA18D"/>
+              <rect x="174" y="106" width="14" height="14" rx="3" fill="#5A2E2E"/>
+              <rect x="220" y="100" width="50" height="80" rx="4" fill="#5A2E2E"/>
+              <circle cx="262" cy="140" r="4" fill="#CFA18D"/>
+              <rect x="125" y="140" width="70" height="40" rx="4" fill="#E8DFD6"/>
+              <rect x="135" y="150" width="50" height="6" rx="3" fill="#CFA18D"/>
+              <rect x="135" y="162" width="35" height="6" rx="3" fill="#D8B7A6"/>
+            </svg>
